@@ -1,7 +1,7 @@
 services:
   ProjectZomboidDedicatedServer:
     image: danixu86/project-zomboid-dedicated-server:41.78.16
-    restart: unless-stopped
+    restart: no
     network_mode: host
     env_file:
       - .env
