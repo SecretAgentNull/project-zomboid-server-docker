@@ -175,7 +175,7 @@ SandboxVars = {
     -- 2 = Dry
     -- 3 = Normal
     -- 4 = Rainy
-    Rain = 3,
+    Rain = 4,
     -- Number of days until 100% growth. Default=Normal (100 Days)
     -- 1 = Very Fast (20 Days)
     -- 2 = Fast (50 Days)
@@ -1626,7 +1626,7 @@ SandboxVars = {
         -- Minimum=-1.00 Maximum=100.00 Default=4.00
         HerbalSpawnRate = 1.0,
         -- Minimum=-1.00 Maximum=100.00 Default=4.00
-        PillsSpawnRate = 2.0,
+        PillsSpawnRate = 1.0,
         -- Minimum=-1.00 Maximum=100.00 Default=4.00
         DesintoxicantesSpawnRate = 1.0,
         -- Minimum=1 Maximum=99 Default=3
