@@ -25,10 +25,10 @@ jobs:
             "bash -c '
               set -e
               cd \"${{ secrets.SERVER_PATH }}\"
-              docker compose down
+              docker compose stop
               git reset --hard HEAD
               git fetch origin && git reset --hard origin/main
-              docker compose up -d
+              docker compose start
             '"
         env:
           SSH_PORT: ${{ secrets.SSH_PORT }}
