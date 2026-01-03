@@ -21,12 +21,11 @@ jobs:
         run: |
           SERVER_PATH="${{ secrets.SERVER_PATH }}" \
           ssh -o StrictHostKeyChecking=yes -p ${SSH_PORT:-22} \ 
-          ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-          bash -c '
-            set -e
-            cd "$SERVER_PATH"
-            git pull origin main
-            docker compose restart
-          '
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << EOF
+              set -e
+              cd "$SERVER_PATH"
+              git pull origin main
+              docker compose restart
+          EOF
         env:
           SSH_PORT: ${{ secrets.SSH_PORT }}
