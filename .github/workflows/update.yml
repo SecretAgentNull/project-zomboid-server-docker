@@ -19,9 +19,10 @@ jobs:
 
       - name: Update & restart
         run: |
+          SERVER_PATH="${{ secrets.SERVER_PATH }}" \
           ssh -o StrictHostKeyChecking=yes -p ${SSH_PORT:-22} \ 
           ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-          SERVER_PATH="${{ secrets.SERVER_PATH }}" bash -c '
+          bash -c '
             set -e
             cd "$SERVER_PATH"
             git pull origin main
