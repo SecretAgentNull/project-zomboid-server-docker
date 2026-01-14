@@ -26,7 +26,8 @@ jobs:
               set -e
               cd \"${{ secrets.SERVER_PATH }}\"
               docker compose stop
-              git pull --rebase
+              git fetch origin
+              git reset --hard origin/main
               docker compose start
             '"
         env:
